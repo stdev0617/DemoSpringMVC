@@ -13,6 +13,7 @@ public class WebApplication implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         // 서블릿을 만들어서 등록하면 됨.
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+        context.setServletContext(servletContext);
         context.register(WebConfig.class);
         context.refresh();
 
